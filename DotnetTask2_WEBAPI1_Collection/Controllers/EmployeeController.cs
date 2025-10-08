@@ -94,8 +94,15 @@ namespace DotnetTask2_WEBAPI1_Collection.Controllers
             return Ok($"Employee with ID {id} deleted successfully.");
         }
 
-       
+        [HttpOptions]
+        public ActionResult GetOptions()
+        {
+            Response.Headers.Add("Allow", "GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS");
+            return Ok();
+        }
 
-      
+
+
+
     }
 }
